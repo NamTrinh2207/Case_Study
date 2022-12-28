@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg1: #9b59b6;
+    --bg2: #3498db;
+}
+#container{
+    max-width: 1100px;
+    background: linear-gradient(to bottom right, var(--bg1), var(--bg2));
+    margin: 10px auto ;
+    border: 2px solid black;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table tr td {
+    border: 1px solid black;
+}
+table tr th {
+    border: 1px solid black;
+
+}
+th {
+    height: 30px;
+}
+input {
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 40px;
+}
+button {
+    width: 60px;
+    height: 25px;
+    display: inline-block;
+}
