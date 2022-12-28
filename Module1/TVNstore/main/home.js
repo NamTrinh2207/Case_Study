@@ -134,7 +134,7 @@ let cartShow = document.querySelector(".showCart")
 cartShow.addEventListener("click", function (){
     document.querySelector(".cart").style.right = "0";
 })
-let cartBtn = document.querySelector(".fa-times")
+let cartBtn = document.querySelector(".fa-arrow-alt-circle-right")
 cartBtn.addEventListener("click", function (){
     document.querySelector(".cart").style.right = "-100%";
 })
