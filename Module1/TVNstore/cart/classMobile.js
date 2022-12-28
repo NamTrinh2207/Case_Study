@@ -1,15 +1,13 @@
 class MobilePhone {
-    stt;
     name;
-    number;
     price;
+    number;
     img;
 
-    constructor(stt, name, number, price, img) {
-        this.stt = stt
+    constructor(name, number, price, img) {
         this.name = name;
-        this.number = number;
         this.price = price;
+        this.number = number;
         this.img = img;
     }
     
