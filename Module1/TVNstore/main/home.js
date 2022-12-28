@@ -14,6 +14,9 @@ function next(){
     change += size
     changeSlide.style.marginLeft = '-' + change + 'px'
 }
+// lấy danh sách sản phẩm dưới localStogate
+// chuyển danh sách đối tượng sản phẩm
+// 
 
 
 

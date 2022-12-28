@@ -12,7 +12,10 @@ a {
   font-size: 16px;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
+}
+.container ul li a {
+  color: white;
 }
 /*------------------------navigation ---------------------------------*/
 nav {
@@ -91,11 +94,10 @@ li {
 }
 .slideShow {
   width: 1200px;
-  margin: 120px auto;
+  margin: 120px auto 10px auto;
   display: flex;
   overflow: hidden;
   border-radius: 10px;
-  position: relative;
 }
 .change-slide {
   width: 9999px;
@@ -106,20 +108,9 @@ li {
   width: 1200px;
   height: 400px;
 }
-.slideShow-btn {
-  position: absolute;
-  color: #333333;
-  font-size: 40px;
-  top: 48%;
-  padding-left: 15px;
-}
-.slideShow-btn i:last-child{
-position: absolute;
-  left: 1160px;
-}
 /*---------------------------------------------------ShowProduct-------------------------------------*/
 #list-item {
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
   line-height: 1.15;
   color: #111;
@@ -168,5 +159,34 @@ ul.products li a.cart-button {
   padding: 10px 0;
 }
 ul.products li a.cart-button:hover {
-  background-color: #d71111;
+  background-color: #f80202;
+}
+/*-----------------------------------------Footer------------------------------*/
+#footer-bottom {
+  display: flex;
+  background: #FFBE0B;
+  color: #fdfcfc;
+  font-weight: bold;
+  height: 80px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+}
+.footer-bottom {
+  text-align: left;
+  width: 60%;
+  padding-left: 20px;
+  font-size: 13px;
+  padding-top: 10px;
+}
+.logo-footer {
+  width: 10%;
+  height: 80px;
+  border-right: 5px solid #FF0000 ;
+}
+.logo-footer img {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
 }
