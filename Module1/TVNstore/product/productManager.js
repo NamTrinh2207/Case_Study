@@ -7,7 +7,6 @@ let productArr = [
 function display() {
     let display = " ";
     let count = 1;
-    let counts = 0;
     for (let i = 0; i < productArr.length; i++) {
         display += 
             `<tr>

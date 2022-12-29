@@ -14,14 +14,14 @@
     <div class="container">
         <ul>
             <li>
-                <marquee behavior="" direction=""><a href="http://localhost:63342/Case%20Study/Module1/TVNstore/main/home.html?_ijt=dsdkrjp7k1rovb290gip0of991&_ij_reload=RELOAD_ON_CHANGE"><img
-                        style="width: 170px; height: 60px;" src="/Module1/img/Logo.png" alt=""></a></marquee>
+                <a href="http://localhost:63342/Case%20Study/Module1/TVNstore/main/home.html?_ijt=dsdkrjp7k1rovb290gip0of991&_ij_reload=RELOAD_ON_CHANGE"><img
+                        style="width: 170px; height: 60px;" src="/Module1/img/Logo.png" alt=""></a>
             </li>
             <li><a>Hà Nội <i class="fas fa-caret-down"></i></a></li>
             <li><input type="text" placeholder="Bạn cần tìm gì..."><i class="fas fa-search"></i></li>
             <li><i class="fas fa-phone" style=" font-size: 25px"></i><a> Bán hàng Online</a></li>
             <li><i class="far fa-check-circle" style=" font-size: 25px"></i><a> Tra cứu sản phẩm</a></li>
-            <li><i class="fas fa-shopping-cart" style=" font-size: 25px; position: relative"><span style="color: #111111; position: absolute" class="ascending"></span></i><a class="showCart"> Giỏ hàng</a></li>
+            <li><i class="fas fa-shopping-cart" style=" font-size: 25px; position: relative"><span style="font-size: 13px;color: #e10c0c; position: absolute" class="ascending"></span></i><a style="margin-left: 5px" class="showCart"> Giỏ hàng</a></li>
             <li><i class="fas fa-user" style="font-size: 25px; "></i><a class="showAdmin"> Admin</a></li>
         </ul>
     </div>
@@ -33,7 +33,7 @@
                 <li style="font-size: 15px; line-height: 50px;padding-left: 40px;"><i
                         style="padding: 17px 10px; font-size: 15px;" class="fas fa-bars"></i>DANH MỤC
                 </li>
-                <li><img src="/Module1/img/menu/iphone.png" alt=""><a href="#">Iphone</a></li>
+                <li><img src="/Module1/img/menu/iphone.png" alt=""><a href="#iphone">Iphone</a></li>
                 <li><img style="margin-left: 50px" src="/Module1/img/menu/ipad.png" alt=""><a href="#">Ipad</a></li>
                 <li><img src="/Module1/img/menu/samsung.png" alt=""><a href="#">SamSung</a></li>
                 <li><img style="margin-left: 50px" src="/Module1/img/menu/xiaomi.png" alt=""><a
@@ -57,7 +57,7 @@
 <div id="list-item">
     <h3 STYLE="text-align:center; background-color: #d50e0e ; font-size: 30px; padding: 10px 0">DANH SÁCH SẢN PHẨM</h3>
     <ul class="products">
-        <li>
+        <li id="iphone">
             <div class="product-item">
                 <div class="product-top">
                         <img class="product-thumb" src="/Module1/img/iphone/11.jpg" alt="">
@@ -324,7 +324,7 @@
 <section class="login">
     <div class="loin-container">
         <form class="form-login">
-            <h2><i style="font-size: 30px; cursor: pointer" class="far fa-times-circle"></i></h2>
+            <h2><i style="font-size: 30px; cursor: pointer; float: right; " class="far fa-times-circle"></i></h2>
             <div class="form-text">
                 <label><i class="fas fa-user"></i></label>
                 <input id="userName" placeholder="UserName" type="text"/>

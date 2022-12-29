@@ -210,7 +210,7 @@ ul.products li a.cart-button:hover {
   text-align: left;
 }
 .cart table tr td {
-  border-bottom: 1px solid #dddd;
+  border-bottom: 2px solid #dddd;
   padding: 12px 0;
 }
 .cart table thead tr th:last-child {
@@ -228,9 +228,8 @@ ul.products li a.cart-button:hover {
   background-color: #fdfcfc;
   padding: 12px 12px;
   overflow: scroll;
-  border-radius: 10px;
   right: -100%;
-  transition: all 0.8s ease;
+  transition: all 0.4s ease;
   opacity: 95%;
 }
 .cart th {
@@ -266,11 +265,10 @@ ul.products li a.cart-button:hover {
   background-color: #fdfcfc;
   padding: 12px 12px;
   overflow: scroll;
-  border-radius: 10px;
   transition: all 0.3s ease;
   opacity: 95%;
 }
-.form-login h1 {
+.form-login h2 {
   padding: 30px;
   text-align: center;
 }

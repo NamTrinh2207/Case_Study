@@ -2,20 +2,19 @@
 let btn = document.getElementsByClassName("cart-button")
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
-        let btnItem = event.target
-        let product = btnItem.parentElement
-        let productImg = product.getElementsByClassName("product-thumb")[0].src
-        let productName = product.getElementsByClassName("product-name")[0].innerHTML
-        let productPrice = product.getElementsByClassName("product-price")[0].innerHTML
+        let productImg = event.target.parentElement.getElementsByClassName("product-thumb")[0].src
+        let productName = event.target.parentElement.getElementsByClassName("product-name")[0].innerHTML
+        let productPrice = event.target.parentElement.getElementsByClassName("product-price")[0].innerHTML
         addCart(productImg, productName, productPrice)
     })
 }
 
-//Tạo một dòng rỗng
+//Tạo một dòng rỗng trong giỏ hàng
+let count = 0;//khởi tạo biến đếm giỏ hàng
 function addCart(productImg, productName, productPrice) {
     let addtr = document.createElement("tr")
-    let cartItem = document.querySelectorAll("tbody tr")//khởi tạo lại giỏ hàng kiểm tra máy trùng tên
-    for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
+    let cartItem = document.querySelectorAll("tbody tr")//khởi tạo lại giỏ hàng kiểm tra phone trùng tên
+    for (let i = 0; i < cartItem.length; i++) {//lặp for trong giỏ hàng
         let listPhone = document.querySelectorAll(".checkName")
         if (listPhone[i].innerHTML === productName) {
             alert("Sản phẩm bạn chọn đã có trong giỏ hàng !")
@@ -23,21 +22,28 @@ function addCart(productImg, productName, productPrice) {
         }
     }
     alert("Đã thêm Sản phẩm vào giỏ hàng")
-
-    let trcontent = `<tr>\n
-                       <td style="display: flex; align-items: center"><img style="width: 70px" src = "${productImg}"><span class="checkName">${productName}</span></td>\n
-                       <td><span class="price">${productPrice}</span><sup>đ</sup></td>\n
-                       <td><input style="width: 30px; outline: none; border-radius: 5px" type="number" value="1" min="1"></td>\n
-                       <td class="delete" style="cursor: pointer">Xóa</td>\n
+    count++;// tăng count lên 1 khi click vào thêm sản phẩm
+    document.getElementsByClassName("ascending")[0].textContent = count
+    
+        //Tạo dòng mới chưa sản phẩm trong giỏ hàng
+    let trContent = `<tr>
+                       <td style="display: flex; align-items: center"><img style="width: 70px" src = "${productImg}"><span class="checkName">${productName}</span></td>
+                       <td><span class="price">${productPrice}</span><sup>đ</sup></td>
+                       <td><input style="width: 30px; outline: none; border-radius: 5px; text-align: center" type="number" value="1" min="1"></td>
+                       <td onclick="countDelete()" class="delete" style="cursor: pointer; padding-right: 22px">Xóa</td>    
                     </tr>`
-    addtr.innerHTML = trcontent//in ra web
+    addtr.innerHTML = trContent//in ra màn hình
     let cartTable = document.querySelector("tbody")//select table
-    cartTable.append(addtr)
+    cartTable.append(addtr) //thêm tr đã tạo vaào tbody
     //gọi hàm tính tổng
     cartTotal()
     deleteListPhone()
 }
 
+function countDelete(){
+    count--
+    document.getElementsByClassName("ascending")[0].textContent = count
+}
 // tính tổng tiền SP trong giỏ hàng
 function cartTotal() {
     let total = 0;
@@ -63,11 +69,13 @@ function deleteListPhone() {
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
         let listPhone = document.querySelectorAll(".delete")
         listPhone[i].addEventListener("click", function (event) {
-            let deletePhone = event.target
-            let deleteItem = deletePhone.parentElement
+            let deleteItem = event.target.parentElement
             deleteItem.remove()
+            // console.log(deleteItem)
             cartTotal()//sau khi xóa gọi lại hàm tính tổng
         })
+        // count--;
+        // document.getElementsByClassName("ascending")[0].textContent = count
         // console.log(listPhone)
     }
 }
@@ -113,12 +121,12 @@ adminBtn.addEventListener("click", function () {
 })
 /*-------------------------------------logIn----------------------------*/
 function user() {
-    let username = "admin";
-    let password = "123";
+    let username = "kieuanhkute";
+    let password = "12345";
     let user = document.getElementById("userName");
     let pass = document.getElementById("passWord");
     if (user.value === username && pass.value === password) {
-        alert("Đăng nhập thành công")
+        alert("Đăng nhập thành công !")
         window.location.href = "product.html";
         localStorage.setItem("user", "admin");
     } else {
