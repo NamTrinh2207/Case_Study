@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<link rel="stylesheet" href="../product/product.css">
+<body>
+<nav>
+    <div class="container">
+        <ul>
+            <li>
+                <marquee behavior="" direction=""><a href="http://localhost:63342/Case%20Study/Module1/TVNstore/main/home.html?_ijt=dsdkrjp7k1rovb290gip0of991&_ij_reload=RELOAD_ON_CHANGE"><img
+                        style="width: 170px; height: 60px;" src="/Module1/img/Logo.png" alt=""></a></marquee>
+                </li>
+            <li><a>Hà Nội <i class="fas fa-caret-down"></i></a></li>
+            <li><input type="text" placeholder="Bạn cần tìm gì..."><i class="fas fa-search"></i></li>
+            <li><i class="fas fa-phone" style=" font-size: 25px"></i><a> Bán hàng Online</a></li>
+            <li><i class="far fa-check-circle" style=" font-size: 25px"></i><a> Tra cứu sản phẩm</a></li>
+            <li><i class="fas fa-shopping-cart" style=" font-size: 25px; position: relative"><span style="color: #111111; position: absolute" class="ascending"></span></i><a class="showCart"> Giỏ hàng</a></li>
+            <li><i class="fas fa-user" style=" font-size: 25px"></i><a> Admin</a></li>
+        </ul>
+    </div>
+</nav>
+<section class="menu-bar">
+    <div class="sub-container">
+        <div class="menu-bar-content">
+            <ul>
+                <li style="font-size: 15px; line-height: 50px;padding-left: 40px;"><i
+                        style="padding: 17px 10px; font-size: 15px;" class="fas fa-bars"></i>DANH MỤC
+                </li>
+                <li><img src="/Module1/img/menu/iphone.png" alt=""><a href="#">Iphone</a></li>
+                <li><img style="margin-left: 50px" src="/Module1/img/menu/ipad.png" alt=""><a href="#">Ipad</a></li>
+                <li><img src="/Module1/img/menu/samsung.png" alt=""><a href="#">SamSung</a></li>
+                <li><img style="margin-left: 50px" src="/Module1/img/menu/xiaomi.png" alt=""><a
+                        href="#">Xiaomi</a></li>
+                <li><img src="/Module1/img/menu/vsmart.png" alt=""><a href="#">VsMart</a></li>
+                <li><img src="/Module1/img/menu/phụ%20kiện.png" alt=""><a href="#accessory">Phụ Kiện</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<div id="container">
+    <h2>QUẢN LÝ SẢN PHẨM</h2>
+    <input type="text" id="name" placeholder="Nhập tên SP">
+    <input type="text" id="img" placeholder="Img">
+    <input type="number" id="price" placeholder="Đơn giá">
+    <input type="number" id="number" placeholder="Số lượng">
+    <button onclick="add()">TẠO SẢN PHẨM</button>
+    <br>
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>TÊN SẢN PHẨM</th>
+            <th>ẢNH SP</th>
+            <th>ĐƠN GIÁ(VNĐ)</th>
+            <th>SỐ LƯỢNG</th>
+            <th>TỔNG TIỀN/SP</th>
+            <th colspan="2">CHỌN</th>
+        </tr>
+        <tbody id="output"></tbody>
+    </table>
+</div>
+<footer id="footer-bottom">
+    <div class="logo-footer">
+       <img src="../../img/Logo.png"/>
+    </div>
+    <span class="footer-bottom">
+    <span>DEMO CASE STUDY BY TRINH VAN NAM</span><br>
+            <span>Student</span> <br>
+            <span>Tel:  (84) 369324197 │ Email: trinhnam180697@gmail.com</span><br>
+                <span> CODEGYM VIETNAM JSC │ Website: codegym.vn
+                No.23 - TT01, Mon City, Ham Nghi, My Dinh 2, Nam Tu Liem, Hanoi</span>
+        </span>
+</footer>
+</body>
+<script src="../product/classProduct.js"></script>
+<script src="../product/productManager.js"></script>
+
+</html>

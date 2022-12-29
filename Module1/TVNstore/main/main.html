@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../img/Logo.png" type="image/x-icon" />
     <title>TVN Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="main.css">
@@ -13,14 +14,15 @@
     <div class="container">
         <ul>
             <li>
-                <a href="http://localhost:63342/Case%20Study/Module1/TVNstore/main/home.html?_ijt=dsdkrjp7k1rovb290gip0of991&_ij_reload=RELOAD_ON_CHANGE"><img
-                        style="width: 170px; height: 60px;" src="/Module1/img/Logo.png" alt=""></a></li>
+                <marquee behavior="" direction=""><a href="http://localhost:63342/Case%20Study/Module1/TVNstore/main/home.html?_ijt=dsdkrjp7k1rovb290gip0of991&_ij_reload=RELOAD_ON_CHANGE"><img
+                        style="width: 170px; height: 60px;" src="/Module1/img/Logo.png" alt=""></a></marquee>
+            </li>
             <li><a>Hà Nội <i class="fas fa-caret-down"></i></a></li>
             <li><input type="text" placeholder="Bạn cần tìm gì..."><i class="fas fa-search"></i></li>
             <li><i class="fas fa-phone" style=" font-size: 25px"></i><a> Bán hàng Online</a></li>
             <li><i class="far fa-check-circle" style=" font-size: 25px"></i><a> Tra cứu sản phẩm</a></li>
             <li><i class="fas fa-shopping-cart" style=" font-size: 25px; position: relative"><span style="color: #111111; position: absolute" class="ascending"></span></i><a class="showCart"> Giỏ hàng</a></li>
-            <li><i class="fas fa-user" style=" font-size: 25px"></i><a> Admin</a></li>
+            <li><i class="fas fa-user" style="font-size: 25px; "></i><a class="showAdmin"> Admin</a></li>
         </ul>
     </div>
 </nav>
@@ -46,9 +48,9 @@
 <div class="slideShow">
     <div class="change-slide">
         <img src="../../img/slideShow/left.png"/>
-        <img src="../../img/slideShow/right.jpg"/>
-        <img src="../../img/slideShow/left2.png"/>
-        <img src="../../img/slideShow/left3.jpg"/>
+<!--        <img src="../../img/slideShow/right.jpg"/>-->
+<!--        <img src="../../img/slideShow/left2.png"/>-->
+<!--        <img src="../../img/slideShow/left3.jpg"/>-->
     </div>
 </div>
 <!------------------------------------------------------------SP--------------------------------------------------->
@@ -297,6 +299,7 @@
         </li>
     </ul>
 </div>
+<!-----------------------------------------cart----------------------------------->
 <section class="cart">
     <h2 style="color: #111111"><i style="font-size: 30px" class="fas fa-arrow-alt-circle-right"></i></h2>
     <form action="">
@@ -314,14 +317,14 @@
         <div class="price-total" style="text-align: right ">
             <p style="font-weight: bold">Tổng tiền :<span>0</span><sup>đ</sup></p>
         </div>
-        <button onclick="press()">Chốt đơn</button>
+        <button onclick="press()">Mua ngay</button>
     </form>
 </section>
 <!---------------------------------------------------login------------------------------------------------------->
 <section class="login">
     <div class="loin-container">
         <form class="form-login">
-            <h1>Admin</h1>
+            <h2><i style="font-size: 30px; cursor: pointer" class="far fa-times-circle"></i></h2>
             <div class="form-text">
                 <label><i class="fas fa-user"></i></label>
                 <input id="userName" placeholder="UserName" type="text"/>
@@ -336,20 +339,71 @@
         </form>
     </div>
 </section>
-<!----------------------------------------------------footer--------------------------------------------->
-<footer id="footer-bottom">
-    <div class="logo-footer">
-        <img src="../../img/Logo.png"/>
-    </div>
-    <span class="footer-bottom">
-            <span>DEMO CASE STUDY BY TRINH VAN NAM</span><br>
-            <span>Student</span> <br>
-            <span>Tel:  (84) 369324197 │ Email: trinhnam180697@gmail.com</span><br>
-                <span> CODEGYM VIETNAM JSC │ Website: codegym.vn
-                No.23 - TT01, Mon City, Ham Nghi, My Dinh 2, Nam Tu Liem, Hanoi</span>
-        </span>
-</footer>
 </body>
-<script src="class.js"></script>
+<!--------------------------------------------------hoa------------------------------------------------------------------->
 <script src="main.js"></script>
+<script>
+    document.write('<style type="text/css">html{padding-bottom:20px}</style><img style="position:fixed;z-index:9999;top:0;left:0;" src="https://sharethuthuat.com/wp-content/uploads/2021/12/banner_left.png" _cke_saved_src="https://sharethuthuat.com/wp-content/uploads/2021/12/banner_right.png"/></a><img style="position:fixed;z-index:9999;top:0;right:0;" src="https://sharethuthuat.com/wp-content/uploads/2021/12/banner_right.png"/></a><div style="position:fixed;z-index:9999;bottom:-50px;left:0;width:100%;height:104px;background:url(https://sharethuthuat.com/wp-content/uploads/2021/12/nentet.png) repeat-x bottom left;"></div><img style="position:fixed;z-index:9999;bottom:20px;left:20px" src="https://sharethuthuat.com/wp-content/uploads/2021/12/banner_header.png"/></a>');
+    let pictureSrc ="https://sharethuthuat.com/wp-content/uploads/2021/12/hoamai.png"; //the location of the snowflakes
+    let pictureWidth = 15; //
+    let pictureHeight = 15; //the height of the snowflakes
+    let numFlakes = 10; //the number of snowflakes
+    let downSpeed = 0.01; //the falling speed of snowflakes (portion of screen per 100 ms)
+    let lrFlakes = 10; //the speed that the snowflakes should swing from side to side
+
+
+    if( typeof( numFlakes ) != 'number' || Math.round( numFlakes ) != numFlakes || numFlakes < 1 ) { numFlakes = 10; }
+
+    //draw the snowflakes
+    for( let x = 0; x < numFlakes; x++ ) {
+        if( document.layers ) { //releave NS4 bug
+            document.write('<layer id="snFlkDiv'+x+'"><imgsrc="'+pictureSrc+'" height="'+pictureHeight+'"width="'+pictureWidth+'" alt="*" border="0"></layer>');
+        } else {
+            document.write('<div style="position:absolute; z-index:9999;"id="snFlkDiv'+x+'"><img src="'+pictureSrc+'"height="'+pictureHeight+'" width="'+pictureWidth+'" alt="*"border="0"></div>');
+        }
+    }
+
+    //calculate initial positions (in portions of browser window size)
+    let xcoords = new Array(), ycoords = new Array(), snFlkTemp;
+    for( let x = 0; x < numFlakes; x++ ) {
+        xcoords[x] = ( x + 1 ) / ( numFlakes + 1 );
+        do { snFlkTemp = Math.round( ( numFlakes - 1 ) * Math.random() );
+        } while( typeof( ycoords[snFlkTemp] ) == 'number' );
+        ycoords[snFlkTemp] = x / numFlakes;
+    }
+
+    //now animate
+    function flakeFall() {
+        if( !getRefToDivNest('snFlkDiv0') ) { return; }
+        let scrWidth = 0, scrHeight = 0, scrollHeight = 0, scrollWidth = 0;
+//find screen settings for all variations. doing this every time allows for resizing and scrolling
+        if( typeof( window.innerWidth ) == 'number' ) { scrWidth = window.innerWidth; scrHeight = window.innerHeight; } else {
+            if( document.documentElement && (document.documentElement.clientWidth ||document.documentElement.clientHeight ) ) {
+                scrWidth = document.documentElement.clientWidth; scrHeight = document.documentElement.clientHeight; } else {
+                if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                    scrWidth = document.body.clientWidth; scrHeight = document.body.clientHeight; } } }
+        if( typeof( window.pageYOffset ) == 'number' ) { scrollHeight = pageYOffset; scrollWidth = pageXOffset; } else {
+            if( document.body && ( document.body.scrollLeft ||document.body.scrollTop ) ) { scrollHeight = document.body.scrollTop;scrollWidth = document.body.scrollLeft; } else {
+                if(document.documentElement && (document.documentElement.scrollLeft ||document.documentElement.scrollTop ) ) { scrollHeight =document.documentElement.scrollTop; scrollWidth =document.documentElement.scrollLeft; } }
+        }
+//move the snowflakes to their new position
+        for( let x = 0; x < numFlakes; x++ ) {
+            if( ycoords[x] * scrHeight > scrHeight - pictureHeight ) { ycoords[x] = 0; }
+            let divRef = getRefToDivNest('snFlkDiv'+x); if( !divRef ) { return; }
+            if( divRef.style ) { divRef = divRef.style; } let oPix = document.childNodes ? 'px' : 0;
+            divRef.top = ( Math.round( ycoords[x] * scrHeight ) + scrollHeight ) + oPix;
+            divRef.left = ( Math.round( ( ( xcoords[x] * scrWidth ) - (pictureWidth / 2 ) ) + ( ( scrWidth / ( ( numFlakes + 1 ) * 4 ) ) * (Math.sin( lrFlakes * ycoords[x] ) - Math.sin( 3 * lrFlakes * ycoords[x]) ) ) ) + scrollWidth ) + oPix;
+            ycoords[x] += downSpeed;
+        }
+    }
+    //DHTML handlers
+    function getRefToDivNest(divName) {
+        if( document.layers ) { return document.layers[divName]; } //NS4
+        if( document[divName] ) { return document[divName]; } //NS4 also
+        if( document.getElementById ) { return document.getElementById(divName); } //DOM (IE5+, NS6+, Mozilla0.9+, Opera)
+        if( document.all ) { return document.all[divName]; } //Proprietary DOM - IE4
+        return false;
+    }
+    window.setInterval('flakeFall();',100);
+</script>
 </html>

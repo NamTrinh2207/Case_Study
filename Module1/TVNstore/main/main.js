@@ -1,48 +1,4 @@
-// // cre newArr
-// let products = [new MobilePhone("", "", "","")];
-//
-// //display SP
-// function display() {
-//     let show = "";
-//     let sumProduct = 0;
-//     let count = 0;
-//     for (let i = 0; i < products.length; i++) {
-//         sumProduct += Number(products[i].number);
-//         show += `<tr style='text-align: center'>
-//                    <td>${count++}</td>
-//                    <td>${products[i].name}</td>
-//                    <td>${products[i].number}</td>
-//                    <td>${products[i].price}</td>
-//                    <td>${products[i].number * products[i].price}</td>
-//                    <td><img style='width: 100px' src="${products[i].img}"></td>
-//                    <td style='text-align: center;width: 50px' class='button'><button onclick='deleteByTr(" + i + ")'>Delete</button></td>
-//                  </tr>`
-//     }
-//     //print in html
-//     document.getElementById("listProduct").innerHTML = show;
-// }
-// display();
-//
-// //cre function sp
-// function creNewProduct() {
-//     let name = document.getElementById("productName").value
-//     let price = document.getElementById("productNumber").value
-//     let number = document.getElementById("productPrice").value
-//     let img = document.getElementById("productImage").value
-//     let newProduct = new MobilePhone(name, number, price, img)
-//     //push newArr
-//     products.push(newProduct)
-//     display()
-// }
-//
-// //delete
-// function deleteByTr(index) {
-//     products.splice(index, 1)
-//     display()
-// }
-
 // Khach hang them san pham vao gio hang
-
 let btn = document.getElementsByClassName("cart-button")
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
@@ -67,6 +23,7 @@ function addCart(productImg, productName, productPrice) {
         }
     }
     alert("Đã thêm Sản phẩm vào giỏ hàng")
+
     let trcontent = `<tr>\n
                        <td style="display: flex; align-items: center"><img style="width: 70px" src = "${productImg}"><span class="checkName">${productName}</span></td>\n
                        <td><span class="price">${productPrice}</span><sup>đ</sup></td>\n
@@ -80,7 +37,6 @@ function addCart(productImg, productName, productPrice) {
     cartTotal()
     deleteListPhone()
 }
-
 
 // tính tổng tiền SP trong giỏ hàng
 function cartTotal() {
@@ -131,16 +87,29 @@ function inputChange() {
 function press() {
     alert("TVN Store Cảm ơn bạn đã đặt hàng! Chúc bạn ngày mới vui vẻ")
 }
-
+// position-cart------------------------------------------------------------
 //click show cart
 let cartShow = document.querySelector(".showCart")
 cartShow.addEventListener("click", function () {
-    document.querySelector(".cart").style.right = "0";
+    document.querySelector(".cart").style.right = "11%";
 })
 //click hide cart
 let cartBtn = document.querySelector(".fa-arrow-alt-circle-right")
 cartBtn.addEventListener("click", function () {
     document.querySelector(".cart").style.right = "-100%";
+})
+// position-user------------------------------------------------------------
+
+// //click show user
+let adminShow = document.querySelector(".showAdmin")
+adminShow.addEventListener("click", function () {
+    document.querySelector(".form-login").style.bottom = "30%";
+    // console.log(adminShow)
+})
+// //click hide user
+let adminBtn = document.querySelector(".fa-times-circle")
+adminBtn.addEventListener("click", function () {
+    document.querySelector(".form-login").style.bottom = "-100%";
 })
 /*-------------------------------------logIn----------------------------*/
 function user() {
@@ -149,9 +118,10 @@ function user() {
     let user = document.getElementById("userName");
     let pass = document.getElementById("passWord");
     if (user.value === username && pass.value === password) {
-        window.location.href = "crea.html";
+        alert("Đăng nhập thành công")
+        window.location.href = "product.html";
         localStorage.setItem("user", "admin");
     } else {
-        document.getElementById("text").innerHTML ="Mật khẩu hoặc tài khoản sai!.Yêu cầu nhập đúng tài khoản và mật khẩu"
+        alert("Tài khoản hoặc mật khẩu không đúng")
     }
 }
