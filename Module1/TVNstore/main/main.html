@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TVN Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <nav>
@@ -19,8 +19,8 @@
             <li><input type="text" placeholder="Bạn cần tìm gì..."><i class="fas fa-search"></i></li>
             <li><i class="fas fa-phone" style=" font-size: 25px"></i><a> Bán hàng Online</a></li>
             <li><i class="far fa-check-circle" style=" font-size: 25px"></i><a> Tra cứu sản phẩm</a></li>
-            <li><i class="fas fa-shopping-cart" style=" font-size: 25px"></i><a class="showCart"> Giỏ hàng</a></li>
-            <li><i class="fas fa-user" style=" font-size: 25px"></i><a> Đăng nhập</a></li>
+            <li><i class="fas fa-shopping-cart" style=" font-size: 25px; position: relative"><span style="color: #111111; position: absolute" class="ascending"></span></i><a class="showCart"> Giỏ hàng</a></li>
+            <li><i class="fas fa-user" style=" font-size: 25px"></i><a> Admin</a></li>
         </ul>
     </div>
 </nav>
@@ -53,7 +53,7 @@
 </div>
 <!------------------------------------------------------------SP--------------------------------------------------->
 <div id="list-item">
-    <h3 STYLE="text-align:center; background-color: #d50e0e ; font-size: 30px">DANH SÁCH SẢN PHẨM</h3>
+    <h3 STYLE="text-align:center; background-color: #d50e0e ; font-size: 30px; padding: 10px 0">DANH SÁCH SẢN PHẨM</h3>
     <ul class="products">
         <li>
             <div class="product-item">
@@ -317,6 +317,26 @@
         <button onclick="press()">Chốt đơn</button>
     </form>
 </section>
+<!---------------------------------------------------login------------------------------------------------------->
+<section class="login">
+    <div class="loin-container">
+        <form class="form-login">
+            <h1>Admin</h1>
+            <div class="form-text">
+                <label><i class="fas fa-user"></i></label>
+                <input id="userName" placeholder="UserName" type="text"/>
+            </div>
+            <div class="form-text">
+                <label><i class="fas fa-key"></i></label>
+                <input id="passWord" placeholder="PassWord" type="password"/>
+            </div>
+            <div>
+                <input style="padding: 0 50px" class="btn" onclick="user()" type="button" value="Đăng nhập">
+            </div>
+        </form>
+    </div>
+</section>
+<!----------------------------------------------------footer--------------------------------------------->
 <footer id="footer-bottom">
     <div class="logo-footer">
         <img src="../../img/Logo.png"/>
@@ -330,5 +350,6 @@
         </span>
 </footer>
 </body>
-<script src="home.js"></script>
+<script src="class.js"></script>
+<script src="main.js"></script>
 </html>

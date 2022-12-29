@@ -252,3 +252,54 @@ ul.products li a.cart-button:hover {
   cursor: pointer;
   float: right;
 }
+
+.container .ascending {
+  margin-right: 10px;
+}
+/*-------------------------------------------------------login----------------------------------------------------*/
+.form-login {
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  height: 70vh;
+  width: 400px;
+  top: 60px;
+  left: 0;
+  background-color: #fdfcfc;
+  padding: 12px 12px;
+  overflow: scroll;
+  border-radius: 10px;
+  transition: all 0.8s ease;
+  opacity: 95%;
+}
+.form-login h1 {
+  padding: 30px;
+  text-align: center;
+}
+.form-text {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+.form-text i {
+  font-size: 15px;
+  padding-right: 5px;
+}
+.form-text input {
+  height: 30px;
+  cursor: pointer;
+}
+.form-login .btn {
+  margin-top: 30px;
+  font-weight: bold;
+  margin-left: 110px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #D25F5F;
+}
+.form-login .btn:hover {
+  background-color: #ff0000;
+}
+.form-login .btn input {
+  padding: 20px ;
+}

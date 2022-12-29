@@ -81,6 +81,7 @@ function addCart(productImg, productName, productPrice) {
     deleteListPhone()
 }
 
+
 // tính tổng tiền SP trong giỏ hàng
 function cartTotal() {
     let total = 0;
@@ -100,15 +101,14 @@ function cartTotal() {
     inputChange()
     // console.log(totals)
 }
-
 // -------------------------------delete-------------------------------
 function deleteListPhone() {
     let cartItem = document.querySelectorAll("tbody tr")
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
         let listPhone = document.querySelectorAll(".delete")
-        listPhone[i].addEventListener("click", function (event){
+        listPhone[i].addEventListener("click", function (event) {
             let deletePhone = event.target
-            let  deleteItem = deletePhone.parentElement
+            let deleteItem = deletePhone.parentElement
             deleteItem.remove()
             cartTotal()//sau khi xóa gọi lại hàm tính tổng
         })
@@ -116,25 +116,42 @@ function deleteListPhone() {
     }
 }
 
-function inputChange(){
+//tổng tiền thay đổi sau mỗi lần thêm tr
+function inputChange() {
     let cartItem = document.querySelectorAll("tbody tr")
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
         let inputValue = cartItem[i].querySelector("input")
-        inputValue.addEventListener("change", function (){
+        inputValue.addEventListener("change", function () {
             cartTotal()
         })
         // console.log(listPhone)
     }
 }
-function press(){
+
+function press() {
     alert("TVN Store Cảm ơn bạn đã đặt hàng! Chúc bạn ngày mới vui vẻ")
 }
 
+//click show cart
 let cartShow = document.querySelector(".showCart")
-cartShow.addEventListener("click", function (){
+cartShow.addEventListener("click", function () {
     document.querySelector(".cart").style.right = "0";
 })
+//click hide cart
 let cartBtn = document.querySelector(".fa-arrow-alt-circle-right")
-cartBtn.addEventListener("click", function (){
+cartBtn.addEventListener("click", function () {
     document.querySelector(".cart").style.right = "-100%";
 })
+/*-------------------------------------logIn----------------------------*/
+function user() {
+    let username = "admin";
+    let password = "123";
+    let user = document.getElementById("userName");
+    let pass = document.getElementById("passWord");
+    if (user.value === username && pass.value === password) {
+        window.location.href = "crea.html";
+        localStorage.setItem("user", "admin");
+    } else {
+        document.getElementById("text").innerHTML ="Mật khẩu hoặc tài khoản sai!.Yêu cầu nhập đúng tài khoản và mật khẩu"
+    }
+}
