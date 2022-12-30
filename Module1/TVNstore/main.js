@@ -1,18 +1,23 @@
+//list tính năng
+//thêm sản phẩm vào giỏ hàng, các chức năng trong giỏ hàng
+// admin đăng nhập để quản lý sp
+
 // Khach hang them san pham vao gio hang
+//chọn tất cả các thẻ button có class cart-button-----------------------------------------------------------------------
 let btn = document.getElementsByClassName("cart-button")
 for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
         let productImg = event.target.parentElement.getElementsByClassName("product-thumb")[0].src
         let productName = event.target.parentElement.getElementsByClassName("product-name")[0].innerHTML
         let productPrice = event.target.parentElement.getElementsByClassName("product-price")[0].innerHTML
-        addCart(productImg, productName, productPrice)
+        addCart(productImg, productName, productPrice) // gọi hàm tạo
     })
 }
 
-//Tạo một dòng rỗng trong giỏ hàng
+//Tạo một dòng rỗng trong giỏ hàng--------------------------------------------------------------------------------------
 let count = 0;//khởi tạo biến đếm giỏ hàng
 function addCart(productImg, productName, productPrice) {
-    let addtr = document.createElement("tr")
+    let addTr = document.createElement("tr")
     let cartItem = document.querySelectorAll("tbody tr")//khởi tạo lại giỏ hàng kiểm tra phone trùng tên
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong giỏ hàng
         let listPhone = document.querySelectorAll(".checkName")
@@ -23,7 +28,7 @@ function addCart(productImg, productName, productPrice) {
     }
     alert("Đã thêm Sản phẩm vào giỏ hàng")
     count++;// tăng count lên 1 khi click vào thêm sản phẩm
-    document.getElementsByClassName("ascending")[0].textContent = count
+    document.getElementsByClassName("ascending")[0].innerHTML = count
 
     //Tạo dòng mới chưa sản phẩm trong giỏ hàng
     let trContent = `<tr>
@@ -32,20 +37,19 @@ function addCart(productImg, productName, productPrice) {
                        <td><input style="width: 30px; outline: none; border-radius: 5px; text-align: center" type="number" value="1" min="1"></td>
                        <td onclick="countDelete()" class="delete" style="cursor: pointer; padding-right: 22px">Xóa</td>    
                     </tr>`
-    addtr.innerHTML = trContent//in ra màn hình
+    addTr.innerHTML = trContent//in ra màn hình
     let cartTable = document.querySelector("tbody")//select table
-    cartTable.append(addtr) //thêm tr đã tạo vaào tbody
-    //gọi hàm tính tổng
+    cartTable.append(addTr) //chèn tr đã tạo vào tbody
     cartTotal()
     deleteListPhone()
 }
-
+//xóa khi onclick to xóa trong giỏ hàng-----------------------------------------------------------------------------
 function countDelete() {
     count--
-    document.getElementsByClassName("ascending")[0].textContent = count
+    document.getElementsByClassName("ascending")[0].innerHTML = count
 }
 
-// tính tổng tiền SP trong giỏ hàng
+// tính tổng tiền SP trong giỏ hàng--------------------------------------------------------------------------------
 function cartTotal() {
     let total = 0;
     let cartItem = document.querySelectorAll("tbody tr")//khởi tạo 1 hàng mới
@@ -65,7 +69,7 @@ function cartTotal() {
     // console.log(totals)
 }
 
-// -------------------------------delete-------------------------------
+// -------------------------------delete---------------------------------------------------------------------------
 function deleteListPhone() {
     let cartItem = document.querySelectorAll("tbody tr")
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
@@ -76,19 +80,16 @@ function deleteListPhone() {
             // console.log(deleteItem)
             cartTotal()//sau khi xóa gọi lại hàm tính tổng
         })
-        // count--;
-        // document.getElementsByClassName("ascending")[0].textContent = count
-        // console.log(listPhone)
     }
 }
 
-//tổng tiền thay đổi sau mỗi lần thêm tr
+//tổng tiền thay đổi sau mỗi lần thêm tr-------------------------------------------------------------------------
 function inputChange() {
     let cartItem = document.querySelectorAll("tbody tr")
     for (let i = 0; i < cartItem.length; i++) {//lặp for trong list cart
         let inputValue = cartItem[i].querySelector("input")
         inputValue.addEventListener("change", function () {
-            cartTotal()
+            cartTotal()//khi click vào ô input trong giỏ hàng sẽ tính lại tổng tiền
         })
         // console.log(listPhone)
     }
@@ -98,7 +99,7 @@ function press() {
     alert("TVN Store Cảm ơn bạn đã đặt hàng! Chúc bạn ngày mới vui vẻ")
 }
 
-// position-cart------------------------------------------------------------
+// ---------------------------------------position-cart------------------------------------------------------------
 //click show cart
 let cartShow = document.querySelector(".showCart")
 cartShow.addEventListener("click", function () {
@@ -109,7 +110,7 @@ let cartBtn = document.querySelector(".fa-arrow-alt-circle-right")
 cartBtn.addEventListener("click", function () {
     document.querySelector(".cart").style.right = "-100%";
 })
-// position-user------------------------------------------------------------
+// ----------------------------------------position-user------------------------------------------------------------
 
 // //click show user
 let adminShow = document.querySelector(".showAdmin")
@@ -123,7 +124,7 @@ adminBtn.addEventListener("click", function () {
     document.querySelector(".form-login").style.bottom = "-100%";
 })
 
-/*-------------------------------------logIn----------------------------*/
+/*-------------------------------------logIn-------------------------------------------------------------------------*/
 function user() {
     let username = "kieuanhkute";
     let password = "12345";

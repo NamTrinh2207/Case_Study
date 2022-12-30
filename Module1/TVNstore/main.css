@@ -253,7 +253,7 @@ ul.products li a.cart-button:hover {
 }
 
 .cart table tr td {
-    border-bottom: 2px solid #dddd;
+    border-bottom: 3px solid rgba(100, 97, 97, 0.87);
     padding: 12px 0;
 }
 
