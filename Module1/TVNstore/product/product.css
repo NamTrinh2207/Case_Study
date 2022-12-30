@@ -4,22 +4,28 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 ul {
     list-style: none;
 }
+
 a {
     text-decoration: none;
     font-size: 16px;
 }
+
 .container {
     max-width: 1300px;
 }
+
 .container ul li a {
     color: white;
 }
+
 nav {
     background-color: #ffbe0b;
     padding-left: 160px;
@@ -28,34 +34,41 @@ nav {
     width: 100%;
     position: fixed;
 }
+
 nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 nav ul li,
 a {
     color: white;
 }
+
 nav ul li:nth-child(3) input {
     height: 30px;
     width: 100%;
     border-radius: 5px;
     border: none;
 }
+
 nav ul li:nth-child(3) {
     position: relative;
     width: 300px;
 }
+
 nav ul li:nth-child(3) i {
     position: absolute;
     right: 12px;
     color: #333;
     line-height: 30px;
 }
+
 nav ul li a:hover {
     color: #333;
 }
+
 /* ---------------------------Menu-bar ------------------------------------------*/
 .menu-bar {
     background-color: #ff611a;
@@ -64,66 +77,80 @@ nav ul li a:hover {
     width: 100%;
     position: fixed;
 }
+
 .menu-bar ul {
     height: 50px;
     display: flex;
     justify-content: space-between;
     padding: 0 150px;
 }
+
 section div ul li img {
     width: 30px;
     height: 30px;
     margin-top: 10px;
     margin-left: 42px;
 }
+
 .menu-bar ul li a {
     padding: 0 0 5px 0;
     line-height: 50px;
     color: black;
     font-size: 16px;
 }
+
 .menu-bar ul li {
     display: flex;
     width: 100%;
     transition: all 0.4s;
 }
+
 .menu-bar ul li:hover {
     background-color: rgb(228, 219, 219);
 }
+
 /*/------------------------------------------*tABLE*-------------------------------------------------------/*/
 :root {
     --bg1: #9b59b6;
     --bg2: #3498db;
 }
-#container{
+
+#container {
     max-width: 1100px;
     background: linear-gradient(to bottom right, var(--bg1), var(--bg2));
-    margin: 115px auto ;
+    margin: 115px auto;
     border: 2px solid black;
 }
+
 #container h2 {
     text-align: center;
     margin: 20px auto;
 }
+
 table {
     width: 100%;
 }
+
 table tr td {
     border: 1px solid black;
     text-align: center;
 }
+
 table tr th {
     border: 1px solid black;
 
 }
+
 th {
     height: 30px;
 }
+
 input {
     height: 30px;
     border-radius: 5px;
     margin: 10px 40px;
 }
+
 button {
     width: 100%;
     height: 100%;
@@ -134,10 +161,12 @@ button {
     color: #f3f0f0;
     border-radius: 10px;
 }
+
 button:hover {
     background-color: #bb2b2b;
     transition: all 0.8s ease;
 }
+
 /*----------------------------------------------FOOTER-------------------------------------------*/
 #footer-bottom {
     display: flex;
@@ -150,6 +179,7 @@ button:hover {
     text-align: center;
     position: fixed;
 }
+
 .footer-bottom {
     text-align: left;
     width: 60%;
@@ -157,11 +187,13 @@ button:hover {
     font-size: 13px;
     padding-top: 10px;
 }
+
 .logo-footer {
     width: 15%;
     height: 80px;
-    border-right: 5px solid #FF0000 ;
+    border-right: 5px solid #FF0000;
 }
+
 .logo-footer img {
     width: 100%;
     height: 100%;

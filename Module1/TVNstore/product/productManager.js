@@ -15,7 +15,7 @@ function display() {
             <td><img style='width: 100px' src="${productArr[i].img}"</td>
             <td>${productArr[i].price}<sup>đ</sup></td>
             <td>${productArr[i].number}</td>        
-            <td>${productArr[i].number*productArr[i].price}<sup>đ</sup></td>        
+            <td>${productArr[i].number * productArr[i].price}<sup>đ</sup></td>        
             <td><button onclick='edit(${i})'>Sửa</button></td>
             <td><button onclick='del(${i})'>Xóa</button></td>
             </tr>`

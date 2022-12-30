@@ -24,8 +24,8 @@ function addCart(productImg, productName, productPrice) {
     alert("Đã thêm Sản phẩm vào giỏ hàng")
     count++;// tăng count lên 1 khi click vào thêm sản phẩm
     document.getElementsByClassName("ascending")[0].textContent = count
-    
-        //Tạo dòng mới chưa sản phẩm trong giỏ hàng
+
+    //Tạo dòng mới chưa sản phẩm trong giỏ hàng
     let trContent = `<tr>
                        <td style="display: flex; align-items: center"><img style="width: 70px" src = "${productImg}"><span class="checkName">${productName}</span></td>
                        <td><span class="price">${productPrice}</span><sup>đ</sup></td>
@@ -40,10 +40,11 @@ function addCart(productImg, productName, productPrice) {
     deleteListPhone()
 }
 
-function countDelete(){
+function countDelete() {
     count--
     document.getElementsByClassName("ascending")[0].textContent = count
 }
+
 // tính tổng tiền SP trong giỏ hàng
 function cartTotal() {
     let total = 0;
@@ -63,6 +64,7 @@ function cartTotal() {
     inputChange()
     // console.log(totals)
 }
+
 // -------------------------------delete-------------------------------
 function deleteListPhone() {
     let cartItem = document.querySelectorAll("tbody tr")
@@ -95,6 +97,7 @@ function inputChange() {
 function press() {
     alert("TVN Store Cảm ơn bạn đã đặt hàng! Chúc bạn ngày mới vui vẻ")
 }
+
 // position-cart------------------------------------------------------------
 //click show cart
 let cartShow = document.querySelector(".showCart")
@@ -119,6 +122,7 @@ let adminBtn = document.querySelector(".fa-times-circle")
 adminBtn.addEventListener("click", function () {
     document.querySelector(".form-login").style.bottom = "-100%";
 })
+
 /*-------------------------------------logIn----------------------------*/
 function user() {
     let username = "kieuanhkute";
